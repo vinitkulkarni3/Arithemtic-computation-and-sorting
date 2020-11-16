@@ -47,3 +47,11 @@ esac
 done
 
 echo "Dictionary elements are : "${arr[@]}
+
+echo ""
+range=${#arr[@]}
+for (( i=0; i<$range; i++ ))
+do
+        arrstore[$i]=${arr[$i]}
+done
+echo "Array elements are: "${arrstore[@]}
