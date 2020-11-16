@@ -55,3 +55,24 @@ do
         arrstore[$i]=${arr[$i]}
 done
 echo "Array elements are: "${arrstore[@]}
+
+
+echo ""
+ran=${#arrstore[@]}
+for (( i=0; i<$ran; i++ ))
+do
+        for (( j=$i+1; j<$ran; j++))
+        do
+        #x=$(($i+1))
+        #echo "----------"$x
+        if [ ${arrstore[$i]} -gt ${arrstore[$j]} ]
+        then
+                #echo "++++"$x
+                temp=${arrstore[$i]}
+                arrstore[$i]=${arrstore[$j]}
+                arrstore[$j]=$temp
+        fi
+        done
+done
+
+echo "Descending order: "${arrstore[@]}
