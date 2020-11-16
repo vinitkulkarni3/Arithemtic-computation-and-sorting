@@ -76,3 +76,20 @@ do
 done
 
 echo "Descending order: "${arrstore[@]}
+
+rrr=${#arrstore[@]}
+for (( i=0; i<$rrr; i++ ))
+do
+        for (( j=$i+1; j<$rrr; j++))
+        do
+        if [ ${arrstore[$i]} -lt ${arrstore[$j]} ]
+        then
+                #echo "++++"$x
+                temp=${arrstore[$i]}
+                arrstore[$i]=${arrstore[$j]}
+                arrstore[$j]=$temp
+        fi
+        done
+done
+
+echo "Ascending order: "${arrstore[@]}
